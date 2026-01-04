@@ -11,6 +11,8 @@
     a { color: #004aad; font-weight: bold; text-decoration: none;}
     a:hover { text-decoration: underline;}
     textarea { width: 100%; border-radius:5px; border:1px solid #ccc; padding:10px;}
+    button {padding:10px 15px; margin-top:10px; cursor:pointer; border:none; border-radius:5px; background:#004aad; color:white;}
+    button:hover {background:#002d7a;}
 </style>
 </head>
 <body>
@@ -33,41 +35,52 @@
     <h3>WhatsApp Message</h3>
     <textarea id="whatsappMsg" rows="5"></textarea>
     <button onclick="copyWhatsApp()">Copy WhatsApp Message</button>
+
+    <h3>⚡ Logout</h3>
+    <button onclick="logout()">Logout</button>
 </div>
 
 <script>
-// ======= Read URL params =======
-const urlParams = new URLSearchParams(window.location.search);
-const name = urlParams.get("name");
-const id = urlParams.get("id");
-const password = urlParams.get("password");
-const notes = urlParams.get("notes");
-const videos = urlParams.get("videos");
+// ======= Login Protection =======
+// Check if user info exists in localStorage
+let userData = JSON.parse(localStorage.getItem('studentData'));
 
-// ======= Populate dashboard =======
-document.getElementById("studentName").innerText = name;
-document.getElementById("studentID").innerText = id;
-document.getElementById("studentPassword").innerText = password;
+if(!userData){
+    // If no login info, redirect to login page
+    alert("⚠️ Please login first!");
+    window.location.href = "login.html";
+} else {
+    // Populate dashboard with user data
+    document.getElementById("studentName").innerText = userData.name;
+    document.getElementById("studentID").innerText = userData.id;
+    document.getElementById("studentPassword").innerText = userData.password;
+    document.getElementById("notesLink").href = userData.notes;
+    document.getElementById("videosLink").href = userData.videos;
 
-document.getElementById("notesLink").href = notes;
-document.getElementById("videosLink").href = videos;
+    const msg = `Assalamualaikum ${userData.name} 🌸\n\n` +
+                `🎉 Your admission to ASK Online Academy is CONFIRMED!\n\n` +
+                `🔹 Student ID: ${userData.id}\n` +
+                `🔹 Password: ${userData.password}\n\n` +
+                `🌐 Login here: www.youracademy.com/login.html\n` +
+                `📘 Course materials (Notes & Videos) are available on your dashboard.\n\n` +
+                `Welcome to ASK Online Academy! 🚀`;
 
-const msg = `Assalamualaikum ${name} 🌸\n\n` +
-            `🎉 Your admission to ASK Online Academy is CONFIRMED!\n\n` +
-            `🔹 Student ID: ${id}\n` +
-            `🔹 Password: ${password}\n\n` +
-            `🌐 Login here: www.youracademy.com/login.html\n` +
-            `📘 Course materials (Notes & Videos) are available on your dashboard.\n\n` +
-            `Welcome to ASK Online Academy! 🚀`;
+    document.getElementById("whatsappMsg").value = msg;
+}
 
-document.getElementById("whatsappMsg").value = msg;
-
+// ======= Copy WhatsApp Message =======
 function copyWhatsApp() {
     let copyText = document.getElementById("whatsappMsg");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
     alert("WhatsApp message copied! ✅");
+}
+
+// ======= Logout Function =======
+function logout(){
+    localStorage.removeItem('studentData');
+    window.location.href = "login.html";
 }
 </script>
 
