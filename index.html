@@ -1,360 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ASkhan Online Academy</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #222;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background-color: #444;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #2a5298;
-    }
-    .cta {
-      background-color: #2a5298;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 10px;
-    }
-    .cta a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: #ffcc00;
-      color: #222;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 25px;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+    body {font-family: Arial, Helvetica, sans-serif; margin:0; background:#f4f6f8;}
+    header {background:#2a5298; color:white; padding:40px; text-align:center;}
+    section {max-width:1100px; margin:auto; padding:40px 20px;}
+    h2 {color:#2a5298; text-align:center;}
+    .services {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;}
+    .card {background:white; padding:25px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}    
+    .login-box {max-width:420px; margin:30px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}    
+    footer {background:#222; color:white; text-align:center; padding:20px;}
+    a.btn {display:block; text-align:center; padding:12px; background:#2a5298; color:white; text-decoration:none; border-radius:5px; font-size:16px;}
   </style>
 </head>
 <body>
 
 <header>
   <h1>ASkhan Online Academy</h1>
-  <p>Online Tutoring in Mathematics, General Science & Statistics</p>
+  <p>Mathematics • General Science • Statistics</p>
 </header>
 
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#courses">Courses</a>
-  <a href="#why">Instructor</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfY6133qRzNkrOPZ4PKv9NHnyaKm3TZSPqAXDfFcPfltSR-Qw/viewform" target="_blank">Online Admission</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="about">
-  <h2>About ASkhan Online Academy</h2>
-  <p>
-    ASkhan Online Academy is led by <strong>AWAIS KHAN</strong>, an MPhil Scholar in Statistics from the University of Peshawar, 
-    offering high-quality online and physical tutoring in <strong>Mathematics, General Science, and Statistics</strong>.
-    The academy focuses on concept-based learning, exam preparation, and academic excellence for school and college students.
-  </p>
-</section>
-
-<section id="courses">
-  <h2>Our Courses</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Mathematics</h3>
-      <p>Algebra, Trigonometry, Calculus, Probability, and Exam Preparation.</p>
-    </div>
-    <div class="card">
-      <h3>General Science</h3>
-      <p>Physics, Chemistry, Biology basics with concept-based learning.</p>
-    </div>
-    <div class="card">
-      <h3>Statistics</h3>
-      <p>SPSS, R, Data Analysis, Research Guidance, and Exam Support.</p>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <h2>Student Testimonials</h2>
-  <div class="services">
-    <div class="card">
-      <p>"Sir Awais explains mathematics concepts very clearly. My grades improved a lot in a short time."</p>
-      <strong>— Ali Khan (Grade 10)</strong>
-    </div>
-    <div class="card">
-      <p>"Best online teacher for General Science. Classes are easy to understand and very interactive."</p>
-      <strong>— Ayesha Noor (Grade 8)</strong>
-    </div>
-    <div class="card">
-      <p>"I learned Statistics and SPSS from scratch. Sir helped me a lot in my university exams."</p>
-      <strong>— Hamza Shah (BS Student)</strong>
-    </div>
-  </div>
-</section>
-
-<section id="fees">
-  <h2>Student Fee Structure</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Grade 6 – 8</h3>
-      <p><strong>Subjects:</strong> Mathematics, General Science</p>
-      <p><strong>Monthly Fee:</strong> PKR 3,000</p>
-    </div>
-    <div class="card">
-      <h3>Grade 9 – 10</h3>
-      <p><strong>Subjects:</strong> Math, Physics, Chemistry, Biology</p>
-      <p><strong>Monthly Fee:</strong> PKR 4,000</p>
-    </div>
-    <div class="card">
-      <h3>Grade 11 – 12</h3>
-      <p><strong>Subjects:</strong> Math, Physics, Chemistry</p>
-      <p><strong>Monthly Fee:</strong> PKR 5,000</p>
-    </div>
-    <div class="card">
-      <h3>Statistics / University</h3>
-      <p><strong>Subjects:</strong> Statistics, SPSS, R</p>
-      <p><strong>Monthly Fee:</strong> PKR 6,000</p>
-    </div>
-  </div>
-</section>
-
-<section id="scholarship">
-  <h2>Fee Discount & Scholarship Program</h2>
-  <p>
-    ASkhan Online Academy believes that financial limitations should never stop a student from learning. 
-    We offer fee discounts and scholarships to deserving and hardworking students.
-  </p>
-  <div class="services">
-    <div class="card">
-      <h3>Merit-Based Discount</h3>
-      <p>Students with excellent academic performance may receive up to <strong>30% fee discount</strong>.</p>
-    </div>
-    <div class="card">
-      <h3>Need-Based Scholarship</h3>
-      <p>Financially deserving students can apply for <strong>partial or full fee concession</strong>.</p>
-    </div>
-    <div class="card">
-      <h3>Sibling Discount</h3>
-      <p>Families enrolling more than one student are eligible for a <strong>special sibling discount</strong>.</p>
-    </div>
-    <div class="card">
-      <h3>Special Consideration</h3>
-      <p>Orphans, deserving female students, and students from remote areas are encouraged to apply.</p>
-    </div>
-  </div>
-  <p style="margin-top:20px;"><strong>Apply for Discount:</strong> Contact us on WhatsApp +92 330 9193828</p>
-</section>
-
-<section id="student-profile">
-  <h2>Student Profile (Who Can Join)</h2>
-  <ul>
-    <li>Middle School Students (Grade 6–8)</li>
-    <li>Matric Students (Grade 9–10)</li>
-    <li>FSc / Intermediate Students (Grade 11–12)</li>
-    <li>O-Level & A-Level Students</li>
-    <li>BS / University Students (Statistics & Data Analysis)</li>
-    <li>Students preparing for exams and concept improvement</li>
-  </ul>
-</section>
-
-<section id="why">
-  <h2>Instructor Profile</h2>
-  <h3>AWAIS KHAN</h3>
-  <p><strong>MPhil Scholar in Statistics | Tutor & Data Analyst</strong></p>
-  <p>
-    Dedicated MPhil Scholar in Statistics with strong expertise in R, STATA, SPSS, and MS Excel. 
-    Experienced in teaching Mathematics, General Science, and Statistics to O-Level, A-Level, 
-    and secondary school students using simple and effective teaching methods.
-  </p>
-
-  <h4>Education</h4>
-  <ul>
-    <li><strong>MPhil Statistics</strong> – University of Peshawar (2023–2025)</li>
-    <li><strong>BS Statistics</strong> – University of Peshawar (2018–2022)</li>
-    <li>FSc (Pre-Engineering) – Grade A</li>
-    <li>Matric (Science) – Grade A+</li>
-  </ul>
-
-  <h4>Teaching Experience</h4>
-  <ul>
-    <li>Private School Teacher – Mathematics & General Science</li>
-    <li>Home Tutor (Online & Physical) – 2022 to Present</li>
-    <li>Online classes via Zoom & Google Meet with digital boards</li>
-  </ul>
-
-  <h4>Skills</h4>
-  <ul>
-    <li>Mathematics, General Science & Statistics</li>
-    <li>R, STATA, SPSS, MS Excel</li>
-    <li>Data Analysis, Research & Visualization</li>
-  </ul>
-</section>
-
 <section id="login">
-  <h2>Student Login (After Admission Confirmation)</h2>
-  <p style="max-width:800px; margin:auto;">
-    This login facility is available <strong>only for students whose admission has been confirmed</strong> by ASkhan Online Academy.
-    Login credentials (Student ID & Password) are <strong>manually provided</strong> after admission approval and fee confirmation.
+  <h2>Student Login</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Login is available <strong>only for students whose admission has been confirmed</strong>.
+    Student ID and access details are provided manually by the academy.
   </p>
 
-  <div style="max-width:420px; margin:30px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
-    <form>
-      <label><strong>Student ID</strong></label><br>
-      <input type="text" placeholder="Enter Student ID" required style="width:100%; padding:10px; margin:8px 0 15px 0;">
+  <div class="login-box">
+    <label><strong>Student ID</strong></label><br>
+    <input type="text" placeholder="Enter Student ID" style="width:100%; padding:10px; margin:10px 0;"><br>
 
-      <label><strong>Password</strong></label><br>
-      <input type="password" placeholder="Enter Password" required style="width:100%; padding:10px; margin:8px 0 20px 0;">
+    <label><strong>Password</strong></label><br>
+    <input type="password" placeholder="Enter Password" style="width:100%; padding:10px; margin:10px 0 20px 0;"><br>
 
-      <button type="submit" style="width:100%; padding:12px; background:#2a5298; color:white; border:none; border-radius:5px; font-size:16px;">Login</button>
-    </form>
+    <a href="dashboard.html" class="btn">Login to Student Dashboard</a>
 
     <p style="margin-top:15px; font-size:14px; color:#555;">
-      🔒 Login access is enabled only after confirmation.<br>
-      📞 For assistance, contact WhatsApp: <strong>+92 330 9193828</strong>
+      🔒 <strong>Manual Student ID System:</strong><br>
+      Each confirmed student receives a unique ID (e.g. <strong>AOA-001</strong>, <strong>AOA-002</strong>).<br>
+      Dashboard access is shared privately after admission approval.
     </p>
   </div>
 </section>
 
-<section id="dashboard">
+<section id="dashboard-info">
   <h2>Student Dashboard (Locked)</h2>
-  <p style="max-width:900px; margin:auto;">
-    The Student Dashboard is accessible <strong>only after successful login</strong>. This section is reserved for enrolled students
-    and contains academic resources, class updates, and study materials.
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    The Student Dashboard is a restricted area for enrolled students only. It contains academic materials,
+    assignments, recorded lectures, and important announcements.
   </p>
 
-  <div class="services" style="margin-top:25px;">
+  <div class="services">
     <div class="card">
       <h3>📚 Class Notes</h3>
-      <p>Subject-wise notes for Mathematics, General Science, and Statistics.</p>
-      <p><em>🔒 Login required to access</em></p>
+      <p>Mathematics, General Science, and Statistics notes.</p>
+      <p><em>🔒 Login required</em></p>
     </div>
-
     <div class="card">
       <h3>📝 Assignments</h3>
-      <p>Weekly assignments, practice questions, and solutions.</p>
-      <p><em>🔒 Login required to access</em></p>
+      <p>Homework, practice questions, and solutions.</p>
+      <p><em>🔒 Login required</em></p>
     </div>
-
     <div class="card">
       <h3>🎥 Recorded Lectures</h3>
-      <p>Recorded Zoom / Google Meet lectures for revision.</p>
-      <p><em>🔒 Login required to access</em></p>
+      <p>Recorded online classes for revision.</p>
+      <p><em>🔒 Login required</em></p>
     </div>
-
     <div class="card">
-      <h3>📊 Progress & Announcements</h3>
-      <p>Class announcements, test updates, and performance feedback.</p>
-      <p><em>🔒 Login required to access</em></p>
+      <h3>☁️ Google Drive Resources</h3>
+      <p>Private Google Drive folders shared only with enrolled students.</p>
+      <p><em>🔒 Restricted access</em></p>
     </div>
   </div>
 </section>
 
-<section id="notes">
-  <h2>Study Material & Notes</h2>
-  <p style="max-width:900px; margin:auto;">
-    Study materials are provided through Google Drive for enrolled students. Access links are shared
-    <strong>only after admission confirmation</strong>.
+<section id="drive">
+  <h2>Study Material Access</h2>
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    All study materials are shared through <strong>private Google Drive links</strong>.
+    Access is granted only to confirmed students using their registered Gmail accounts.
   </p>
-
-  <div class="services" style="margin-top:25px;">
-    <div class="card">
-      <h3>📘 Mathematics Notes</h3>
-      <p>Chapter-wise PDFs, examples, and practice sheets.</p>
-      <p><em>🔒 Login to access Google Drive links</em></p>
-    </div>
-
-    <div class="card">
-      <h3>🔬 General Science Notes</h3>
-      <p>Physics, Chemistry & Biology concept notes.</p>
-      <p><em>🔒 Login to access Google Drive links</em></p>
-    </div>
-
-    <div class="card">
-      <h3>📈 Statistics & Software</h3>
-      <p>Statistics theory, SPSS & R practical files.</p>
-      <p><em>🔒 Login to access Google Drive links</em></p>
-    </div>
-  </div>
-
-  <p style="margin-top:20px; text-align:center;">
-    🔐 <strong>Note:</strong> Google Drive links are shared privately with confirmed students only.
-  </p>
-</section>
-
-<section class="cta" id="contact">
-  <h2>Online Admission</h2>
-  <p>Fill out the online admission form to enroll in ASkhan Online Academy.</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfY6133qRzNkrOPZ4PKv9NHnyaKm3TZSPqAXDfFcPfltSR-Qw/viewform" target="_blank">Apply for Admission</a>
-  <hr style="margin:30px 0; opacity:0.3;">
-  <h3>Contact Information</h3>
-  <p><strong>Name:</strong> Awais Khan</p>
-  <p><strong>Address:</strong> Malakand</p>
-  <p><strong>Phone / WhatsApp:</strong> +92 330 9193828</p>
-  <p><strong>Email:</strong> awaiskhanmfkr987@gmail.com</p>
 </section>
 
 <footer>
-  <p>&copy; 2026 ASkhan Online Academy. All Rights Reserved.</p>
+  <p>&copy; 2026 ASkhan Online Academy | All Rights Reserved</p>
 </footer>
-
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/93309193828" target="_blank" style="position:fixed; bottom:20px; right:20px; background-color:#25D366; color:white; padding:15px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 4px 8px rgba(0,0,0,0.3); z-index:1000;">
-    💬 WhatsApp Us
-  </a>
 
 </body>
 </html>
