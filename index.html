@@ -3,74 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Login - ASK Online Academy</title>
+<title>Dashboard - ASK Online Academy</title>
 <style>
     body { font-family: Arial, sans-serif; background: #f0f2f5; margin:0; padding:0;}
     header { background: #004aad; color: white; padding: 20px; text-align: center;}
-    .container { max-width: 500px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);}
-    input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border:1px solid #ccc;}
-    button { width: 100%; padding: 10px; background: #004aad; color: white; border: none; border-radius: 5px; cursor: pointer;}
-    button:hover { background: #003080; }
+    .container { max-width: 600px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);}
+    a { color: #004aad; font-weight: bold; text-decoration: none;}
+    a:hover { text-decoration: underline;}
+    textarea { width: 100%; border-radius:5px; border:1px solid #ccc; padding:10px;}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Student Login</h1>
+    <h1>Student Dashboard</h1>
 </header>
 
 <div class="container">
-    <h3>Enter Your Credentials</h3>
-    <input type="text" id="studentName" placeholder="Enter your Name">
-    <input type="text" id="course" placeholder="Enter your Course">
-    <button onclick="loginStudent()">Login</button>
+    <h2>Welcome, <span id="studentName"></span>!</h2>
+    <p>Your Student ID: <span id="studentID"></span></p>
+    <p>Your Password: <span id="studentPassword"></span></p>
+
+    <h3>📘 Course Materials</h3>
+    <ul>
+        <li><a href="" id="notesLink" target="_blank">📄 Download Notes</a></li>
+        <li><a href="" id="videosLink" target="_blank">🎥 Watch Video Lectures</a></li>
+    </ul>
+
+    <h3>WhatsApp Message</h3>
+    <textarea id="whatsappMsg" rows="5"></textarea>
+    <button onclick="copyWhatsApp()">Copy WhatsApp Message</button>
 </div>
 
 <script>
-// ======= Predefined student data =======
-const students = [
-    { name: "Ali Khan", course: "Biology", notes: "https://drive.google.com/drive/folders/EXAMPLE_NOTES_LINK_BIO", videos: "https://drive.google.com/drive/folders/EXAMPLE_VIDEOS_LINK_BIO" },
-    { name: "Sara Ahmed", course: "Statistics", notes: "https://drive.google.com/drive/folders/EXAMPLE_NOTES_LINK_STATS", videos: "https://drive.google.com/drive/folders/EXAMPLE_VIDEOS_LINK_STATS" },
-    { name: "Zain Malik", course: "English", notes: "https://drive.google.com/drive/folders/EXAMPLE_NOTES_LINK_ENG", videos: "https://drive.google.com/drive/folders/EXAMPLE_VIDEOS_LINK_ENG" }
-];
+// ======= Read URL params =======
+const urlParams = new URLSearchParams(window.location.search);
+const name = urlParams.get("name");
+const id = urlParams.get("id");
+const password = urlParams.get("password");
+const notes = urlParams.get("notes");
+const videos = urlParams.get("videos");
 
-function generateID(name) {
-    let rand = Math.floor(Math.random()*900+100);
-    return "ASK-2026-" + rand;
-}
+// ======= Populate dashboard =======
+document.getElementById("studentName").innerText = name;
+document.getElementById("studentID").innerText = id;
+document.getElementById("studentPassword").innerText = password;
 
-function generatePassword(name) {
-    return name.slice(0,3).toUpperCase() + "@123";
-}
+document.getElementById("notesLink").href = notes;
+document.getElementById("videosLink").href = videos;
 
-function loginStudent() {
-    let name = document.getElementById("studentName").value.trim();
-    let course = document.getElementById("course").value.trim();
+const msg = `Assalamualaikum ${name} 🌸\n\n` +
+            `🎉 Your admission to ASK Online Academy is CONFIRMED!\n\n` +
+            `🔹 Student ID: ${id}\n` +
+            `🔹 Password: ${password}\n\n` +
+            `🌐 Login here: www.youracademy.com/login.html\n` +
+            `📘 Course materials (Notes & Videos) are available on your dashboard.\n\n` +
+            `Welcome to ASK Online Academy! 🚀`;
 
-    if(name === "" || course === "") {
-        alert("Please enter both Name and Course!");
-        return;
-    }
+document.getElementById("whatsappMsg").value = msg;
 
-    let student = students.find(s => s.name.toLowerCase() === name.toLowerCase() && s.course.toLowerCase() === course.toLowerCase());
-
-    if(!student) {
-        alert("Student not found or course mismatch!");
-        return;
-    }
-
-    // Pass data via URL to dashboard.html
-    let studentID = generateID(student.name);
-    let password = generatePassword(student.name);
-
-    let params = new URLSearchParams();
-    params.set("name", student.name);
-    params.set("id", studentID);
-    params.set("password", password);
-    params.set("notes", student.notes);
-    params.set("videos", student.videos);
-
-    window.location.href = "dashboard.html?" + params.toString();
+function copyWhatsApp() {
+    let copyText = document.getElementById("whatsappMsg");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    alert("WhatsApp message copied! ✅");
 }
 </script>
 
